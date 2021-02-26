@@ -41,9 +41,9 @@ function StateData() {
                      </AccordionSummary>
                      <AccordionDetails>
                         <Typography>
-                           <div>
+                           <div> 
                               <TableContainer component={Paper}>
-                                 <Table aria-label="simple table">
+                                 <Table aria-label="simple table" striped bordered hover>
                                     <TableHead>
                                        <TableRow>
                                           <TableCell>District</TableCell>
