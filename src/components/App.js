@@ -19,8 +19,8 @@ import useStyles from "../styles/AppStyles";
 
 function App() {
    const classes = useStyles();
-   const [darkState, setDarkState] = useLocalStorageState("darkMode", true);
-   const paletteType = darkState ? "dark" : "light";
+   //const [darkState, setDarkState] = useLocalStorageState("darkMode", true);
+   //const paletteType = darkState ? "dark" : "light";
 
    const arcBlack = "#212529";
    const arcOrange = "#ffab40";
@@ -37,7 +37,7 @@ function App() {
          secondary: {
             main: `${arcOrange}`,
          },
-         type: paletteType,
+         //type: paletteType,
       },
       overrides: {
          MuiTableCell: {
@@ -51,9 +51,9 @@ function App() {
       },
    });
 
-   const handleThemeChange = () => {
-      setDarkState(!darkState);
-   };
+   // const handleThemeChange = () => {
+   //    setDarkState(!darkState);
+   // };
 
    function HideOnScroll(props) {
       const { children } = props;
@@ -79,15 +79,15 @@ function App() {
                              
                               <h1>Covid-19 India Trends</h1>
                               <div className={classes.navItemsRight}>
-                                 <IconButton
+                                 {/* <IconButton
                                     aria-label="toggle dark mode"
                                     aria-controls="menu-appbar"
                                     aria-haspopup="false"
-                                    onClick={handleThemeChange}
+                                 onClick={handleThemeChange}
                                     color="inherit"
                                  >
                                     {darkState ? <Brightness7Icon /> : <Brightness4Icon />}
-                                 </IconButton>
+                                 </IconButton> */}
                                  
                               </div>
                            </Toolbar>

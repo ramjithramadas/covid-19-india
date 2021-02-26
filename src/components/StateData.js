@@ -30,8 +30,8 @@ function StateData() {
          {stateData.map((item) => {
             let districts = item.districtData;
             return (
-               <div className="statedata_accordion">
-                  <Accordion>
+               <div className="statedata_accordion"  >
+                  <Accordion >
                      <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
