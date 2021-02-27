@@ -7,11 +7,11 @@ import Toolbar from "@material-ui/core/Toolbar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Slide from "@material-ui/core/Slide";
-//import Brightness4Icon from "@material-ui/icons/Brightness4";
-//import Brightness7Icon from "@material-ui/icons/Brightness7";
-//import IconButton from "@material-ui/core/IconButton";
+import Brightness4Icon from "@material-ui/icons/Brightness4";
+import Brightness7Icon from "@material-ui/icons/Brightness7";
+import IconButton from "@material-ui/core/IconButton";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-//import useLocalStorageState from "../hooks/useLocalStorageState";
+import useLocalStorageState from "../hooks/useLocalStorageState";
 import { DataProvider } from "../context/data.context";
 import { AttributeProvider } from "../context/attribute.context";
 import { HistoricalDataProvider } from "../context/historicalData.context";
@@ -19,8 +19,8 @@ import useStyles from "../styles/AppStyles";
 
 function App() {
    const classes = useStyles();
-   //const [darkState, setDarkState] = useLocalStorageState("darkMode", true);
-   //const paletteType = darkState ? "dark" : "light";
+   const [darkState, setDarkState] = useLocalStorageState("darkMode", true);
+   const paletteType = darkState ? "dark" : "light";
 
    const arcBlack = "#212529";
    const arcOrange = "#ffab40";
@@ -37,7 +37,7 @@ function App() {
          secondary: {
             main: `${arcOrange}`,
          },
-         //type: paletteType,
+         type: paletteType,
       },
       overrides: {
          MuiTableCell: {
@@ -51,9 +51,9 @@ function App() {
       },
    });
 
-   // const handleThemeChange = () => {
-   //    setDarkState(!darkState);
-   // };
+   const handleThemeChange = () => {
+      setDarkState(!darkState);
+   };
 
    function HideOnScroll(props) {
       const { children } = props;
@@ -79,7 +79,7 @@ function App() {
                              
                               <h1>Covid-19 India Trends</h1>
                               <div className={classes.navItemsRight}>
-                                 {/* <IconButton
+                                 <IconButton
                                     aria-label="toggle dark mode"
                                     aria-controls="menu-appbar"
                                     aria-haspopup="false"
@@ -87,7 +87,7 @@ function App() {
                                     color="inherit"
                                  >
                                     {darkState ? <Brightness7Icon /> : <Brightness4Icon />}
-                                 </IconButton> */}
+                                 </IconButton>
                                  
                               </div>
                            </Toolbar>
